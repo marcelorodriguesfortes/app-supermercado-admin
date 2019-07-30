@@ -89,28 +89,32 @@ class _AdminState extends State<Admin> {
                     crossAxisCount: 2),
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
                               onPressed: null,
                               icon: Icon(Icons.people_outline),
                               label: Text("Users")),
-                          subtitle: Text(
-                            '7',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
+                          subtitle: Column(
+                            children: <Widget>[
+                              Text(
+                                '7',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: active, fontSize: 60.0),
+                              ),
+                            ],
                           )),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
                               onPressed: null,
                               icon: Icon(Icons.category),
-                              label: Text("Categories")),
+                              label: Text("Catego")),
                           subtitle: Text(
                             '23',
                             textAlign: TextAlign.center,
@@ -119,7 +123,7 @@ class _AdminState extends State<Admin> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(22.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
@@ -134,7 +138,7 @@ class _AdminState extends State<Admin> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(22.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
@@ -149,7 +153,7 @@ class _AdminState extends State<Admin> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(22.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
@@ -164,7 +168,7 @@ class _AdminState extends State<Admin> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(22.0),
+                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
                           title: FlatButton.icon(
