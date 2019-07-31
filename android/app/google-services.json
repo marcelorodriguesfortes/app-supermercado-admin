@@ -1,90 +1,74 @@
 {
   "project_info": {
-    "project_number": "130034593582",
-    "firebase_url": "https://flutterfb-c451a.firebaseio.com",
-    "project_id": "flutterfb-c451a",
-    "storage_bucket": "flutterfb-c451a.appspot.com"
+    "project_number": "67845663411",
+    "firebase_url": "https://supermercado-app-e8d4b.firebaseio.com",
+    "project_id": "supermercado-app-e8d4b",
+    "storage_bucket": "supermercado-app-e8d4b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:130034593582:android:096cb5dab58bca60",
+        "mobilesdk_app_id": "1:67845663411:android:82660fa01c75280d",
         "android_client_info": {
-          "package_name": "com.santosenoque.chatapp"
+          "package_name": "com.example.app_supermercado"
         }
       },
       "oauth_client": [
         {
-          "client_id": "130034593582-kj0gvgofi0jaioqmrmdheu9fuq0u5fs4.apps.googleusercontent.com",
+          "client_id": "67845663411-3pdtvj0fqfj9rv3nmnenek3ho22kufpb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.santosenoque.chatapp",
-            "certificate_hash": "d1de65707c7ebcf4d8e50a8d1f0c507a286c740d"
+            "package_name": "com.example.app_supermercado",
+            "certificate_hash": "32ee756556787ab57c2360c843f34ceed2164627"
           }
         },
         {
-          "client_id": "130034593582-6lm7eqkp3l0o0ql7rjggj7k5lpver585.apps.googleusercontent.com",
+          "client_id": "67845663411-kia5uj8acok8i08ljm3ob9gn4evh1opo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB0krkwbtyDdOxbiOqilKSztGYsZ6TUzl4"
+          "current_key": "AIzaSyC2rZ-rwaiR65IvozO8_9KeAcDoy3FQNzs"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "130034593582-6lm7eqkp3l0o0ql7rjggj7k5lpver585.apps.googleusercontent.com",
+              "client_id": "67845663411-kia5uj8acok8i08ljm3ob9gn4evh1opo.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "130034593582-svrltmeguiaukj834rgcev56itc9hh94.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.santosenoque.chatApp"
-              }
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:130034593582:android:ca786232e79c2f08",
+        "mobilesdk_app_id": "1:67845663411:android:ca786232e79c2f08",
         "android_client_info": {
           "package_name": "com.santosenoque.shop_app_admin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "130034593582-6lm7eqkp3l0o0ql7rjggj7k5lpver585.apps.googleusercontent.com",
+          "client_id": "67845663411-kia5uj8acok8i08ljm3ob9gn4evh1opo.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB0krkwbtyDdOxbiOqilKSztGYsZ6TUzl4"
+          "current_key": "AIzaSyC2rZ-rwaiR65IvozO8_9KeAcDoy3FQNzs"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67845663411-kia5uj8acok8i08ljm3ob9gn4evh1opo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

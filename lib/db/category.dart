@@ -7,7 +7,6 @@ class CategoryService{
   void createCategory(String name){
   var id = Uuid();
   String categoryId = id.v1();
-
     _firestore.collection('categories').document(categoryId).setData({'category': name});
   }
 }

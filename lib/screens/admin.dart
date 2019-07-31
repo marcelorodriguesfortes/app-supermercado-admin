@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../db/category.dart';
 import '../db/brand.dart';
+import 'add_products.dart';
 
 enum Page { dashboard, manage }
 
@@ -193,19 +194,21 @@ class _AdminState extends State<Admin> {
           children: <Widget>[
             ListTile(
               leading: Icon(Icons.add),
-              title: Text("Add product"),
-              onTap: () {},
+              title: Text("Adicionar produto"),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => AddProducts() ));
+              },
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.change_history),
-              title: Text("Products list"),
+              title: Text("Lista de produtos"),
               onTap: () {},
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.add_circle),
-              title: Text("Add category"),
+              title: Text("Adicionar categoria"),
               onTap: () {
                 _categoryAlert();
               },
@@ -213,13 +216,13 @@ class _AdminState extends State<Admin> {
             Divider(),
             ListTile(
               leading: Icon(Icons.category),
-              title: Text("Category list"),
+              title: Text("Lista de categoria"),
               onTap: () {},
             ),
             Divider(),
             ListTile(
               leading: Icon(Icons.add_circle_outline),
-              title: Text("Add brand"),
+              title: Text("Adicionar marca"),
               onTap: () {
                 _brandAlert();
               },
@@ -227,7 +230,7 @@ class _AdminState extends State<Admin> {
             Divider(),
             ListTile(
               leading: Icon(Icons.library_books),
-              title: Text("brand list"),
+              title: Text("Lista de marcas"),
               onTap: () {},
             ),
             Divider(),
@@ -247,11 +250,11 @@ class _AdminState extends State<Admin> {
           controller: categoryController,
           validator: (value){
             if(value.isEmpty){
-              return 'category cannot be empty';
+              return 'Categoria não pode ser nula';
             }
           },
           decoration: InputDecoration(
-            hintText: "add category"
+            hintText: "Adicione categoria"
           ),
         ),
       ),
@@ -260,12 +263,12 @@ class _AdminState extends State<Admin> {
           if(categoryController.text != null){
             _categoryService.createCategory(categoryController.text);
           }
-          Fluttertoast.showToast(msg: 'category created');
+          Fluttertoast.showToast(msg: 'Categoria criada!');
           Navigator.pop(context);
-        }, child: Text('ADD')),
+        }, child: Text('Adicionar')),
         FlatButton(onPressed: (){
           Navigator.pop(context);
-        }, child: Text('CANCEL')),
+        }, child: Text('Cancelar')),
 
       ],
     );
@@ -281,11 +284,11 @@ class _AdminState extends State<Admin> {
           controller: brandController,
           validator: (value){
             if(value.isEmpty){
-              return 'category cannot be empty';
+              return 'Marca não pode ser nula';
             }
           },
           decoration: InputDecoration(
-              hintText: "add brand"
+              hintText: "Adicionar marca"
           ),
         ),
       ),
@@ -294,12 +297,12 @@ class _AdminState extends State<Admin> {
           if(brandController.text != null){
             _brandService.createBrand(brandController.text);
           }
-          Fluttertoast.showToast(msg: 'brand added');
+          Fluttertoast.showToast(msg: 'Marca adicionada!');
           Navigator.pop(context);
-        }, child: Text('ADD')),
+        }, child: Text('Adicionar')),
         FlatButton(onPressed: (){
           Navigator.pop(context);
-        }, child: Text('CANCEL')),
+        }, child: Text('Cancelar')),
 
       ],
     );

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">130034593582-6lm7eqkp3l0o0ql7rjggj7k5lpver585.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://flutterfb-c451a.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">130034593582</string>
-    <string name="google_api_key" translatable="false">AIzaSyB0krkwbtyDdOxbiOqilKSztGYsZ6TUzl4</string>
-    <string name="google_app_id" translatable="false">1:130034593582:android:ca786232e79c2f08</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB0krkwbtyDdOxbiOqilKSztGYsZ6TUzl4</string>
-    <string name="google_storage_bucket" translatable="false">flutterfb-c451a.appspot.com</string>
-    <string name="project_id" translatable="false">flutterfb-c451a</string>
+    <string name="default_web_client_id" translatable="false">67845663411-kia5uj8acok8i08ljm3ob9gn4evh1opo.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://supermercado-app-e8d4b.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">67845663411</string>
+    <string name="google_api_key" translatable="false">AIzaSyC2rZ-rwaiR65IvozO8_9KeAcDoy3FQNzs</string>
+    <string name="google_app_id" translatable="false">1:67845663411:android:ca786232e79c2f08</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC2rZ-rwaiR65IvozO8_9KeAcDoy3FQNzs</string>
+    <string name="google_storage_bucket" translatable="false">supermercado-app-e8d4b.appspot.com</string>
+    <string name="project_id" translatable="false">supermercado-app-e8d4b</string>
 </resources>
