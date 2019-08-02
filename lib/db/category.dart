@@ -11,9 +11,14 @@ class CategoryService{
     _firestore.collection('categories').document(categoryId).setData({'category': name});
   }
 
-  Future<List<DocumentSnapshot>> getCategories(){
-    return _firestore.collection(ref).getDocuments().then((snaps){
+  Future<List<DocumentSnapshot>> getCategories()=>
+    _firestore.collection(ref).getDocuments().then((snaps){
       return snaps.documents;
     });
-  }
+
+  
+  Future<List<DocumentSnapshot>> getSuggestions(String suggestion) =>
+    _firestore.collection(ref).where('category' , isEqualTo: suggestion).getDocuments().then((snap){
+      return snap.documents;
+    });
 }

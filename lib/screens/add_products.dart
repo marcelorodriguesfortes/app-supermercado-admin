@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../db/category.dart';
 import '../db/brand.dart';
-
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 class AddProducts extends StatefulWidget {
   @override
@@ -22,7 +22,7 @@ class _AddProductsState extends State<AddProducts> {
   List<DocumentSnapshot> categories = <DocumentSnapshot>[];
   List<DropdownMenuItem<String>> categoriesDropDown = <DropdownMenuItem<String>>[];
   List<DropdownMenuItem<String>> brandsDropDown = <DropdownMenuItem<String>>[];
-  String _currentCategory = "test";
+  String _currentCategory;
   String _currentBrand;
 
 
@@ -30,20 +30,19 @@ class _AddProductsState extends State<AddProducts> {
   @override
   void initState() {
     _getCategories();
-    //_getBrands();
-    getCategoriesDropdown();
-    //_currentCategory = categoriesDropDown[0].value;
   }
 
-  getCategoriesDropdown(){
+  List<DropdownMenuItem<String>> getCategoriesDropdown(){
     List<DropdownMenuItem<String>> items = new List();
     for (int i = 0; i < categories.length; i++){
-      categoriesDropDown.insert(0, DropdownMenuItem(
-        child: Text(categories[i]['category']),
-        value: categories[i]['category'],
-      )
-      );
+      setState(() {
+        items.insert(0, DropdownMenuItem(
+          child: Text(categories[i].data['category']),
+          value: categories[i].data['category'],
+        ));
+      });
     }
+    return items;
   }
   
   @override
@@ -68,7 +67,7 @@ class _AddProductsState extends State<AddProducts> {
                       borderSide: BorderSide(color: grey.withOpacity(0.8), width: 2.5),
                       onPressed:(){},
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
+                        padding: const EdgeInsets.fromLTRB(14.0, 60.0, 14.0, 60.0),
                         child: new Icon(Icons.add, color: grey,),
                       ),
                     ),
@@ -82,7 +81,7 @@ class _AddProductsState extends State<AddProducts> {
                       borderSide: BorderSide(color: grey.withOpacity(0.8), width: 2.5),
                       onPressed:(){},
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
+                        padding: const EdgeInsets.fromLTRB(14.0, 60.0, 14.0, 60.0),
                         child: new Icon(Icons.add, color: grey,),
                       ),
                     ),
@@ -96,7 +95,7 @@ class _AddProductsState extends State<AddProducts> {
                       borderSide: BorderSide(color: grey.withOpacity(0.8), width: 2.5),
                       onPressed:(){},
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
+                        padding: const EdgeInsets.fromLTRB(14.0, 60.0, 14.0, 60.0),
                         child: new Icon(Icons.add, color: grey,),
                       ),
                     ),
@@ -130,21 +129,27 @@ class _AddProductsState extends State<AddProducts> {
               ),
             ),
 
-            Expanded(
-              child: ListView.builder(
-                  itemCount: categories.length,
-                  itemBuilder: (context, index){
-                    return ListTile(
-                      title: Text(categories[index]['category']),
-                    );
-                  }),
+//               Selected category
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Category: ' , style: TextStyle(color: blue),),
+              ),
+              DropdownButton(
+                items: categoriesDropDown,
+                onChanged: changeSelectedCategory,
+                value: _currentCategory
+              ),
+            ],
+          ),
+            
+            FlatButton(
+                color: blue,
+                textColor: white,
+                onPressed: (){}, 
+                child: Text('Adicionar Produto')
             )
-            /*Center(
-              child: DropdownButton(
-                  value: _currentCategory,
-                  items: categoriesDropDown,
-                  onChanged: changeSelectedCategory),
-            )*/
           ],
         ),
       ),
@@ -155,6 +160,11 @@ class _AddProductsState extends State<AddProducts> {
     List<DocumentSnapshot> data = await _categoryService.getCategories();
     setState(() {
       categories = data;
+      categoriesDropDown = getCategoriesDropdown();
+      if (categories[0].exists)
+          _currentCategory = categories[0].data['category'];
+      else
+        _currentCategory = "erro";
     });
    }
 
