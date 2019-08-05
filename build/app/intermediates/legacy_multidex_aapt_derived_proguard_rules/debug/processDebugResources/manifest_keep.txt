@@ -1,2 +1,2 @@
-# Referenced at C:\Backup\repositorios\app_supermercado_admin\app-supermercado-admin\build\app\intermediates\merged_manifests\debug\processDebugManifest\merged\AndroidManifest.xml:29
+# Referenced at /home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:29
 -keep class io.flutter.app.FlutterApplication { <init>(...); }
