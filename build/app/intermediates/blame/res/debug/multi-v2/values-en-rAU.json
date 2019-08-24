@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "C:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1a7945b603c837e985a6777e1cf60617/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ebe1443504ba43c97278f290da2be0f7\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/bb075d68e61cc135635fff31d2a00817/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ba8525cff22f9baedf68f6f019c3ffce\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-te/values-te.xml",
+            "outputFile": "C:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-te\\values-te.xml",
             "map": [
                 {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/6ff0b44c3f5388731c7654a7a18fe6ea/res/values-te/values.xml",
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ebe1443504ba43c97278f290da2be0f7\\res\\values-te\\values-te.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,1924",
+                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
+                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,2001"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,4601",
+                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
+                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,4678"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\e20f256ec9e371dd117ccd051894f427\\res\\values-te\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/bb075d68e61cc135635fff31d2a00817/res/values-te/values-te.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4683",
-                        "endColumns": "100",
-                        "endOffsets": "4779"
-                    }
-                },
-                {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/abb1f3164445775c185d59e032a05291/res/values-te/values.xml",
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\f05e946ee534cc5f33160beac5dd1a36\\res\\values-te\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,20 +55,20 @@
                     }
                 },
                 {
-                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1a7945b603c837e985a6777e1cf60617/res/values-te/values-te.xml",
+                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ba8525cff22f9baedf68f6f019c3ffce\\res\\values-te\\values-te.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,1924",
-                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
-                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,2001"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,219,328,439,529,634,759,841,923,1007,1120,1228,1327,1438,1540,1657,1823,4601",
-                        "endColumns": "113,108,110,89,104,124,81,81,83,112,107,98,110,101,116,165,100,81",
-                        "endOffsets": "214,323,434,524,629,754,836,918,1002,1115,1223,1322,1433,1535,1652,1818,1919,4678"
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4683",
+                        "endColumns": "100",
+                        "endOffsets": "4779"
                     }
                 }
             ]

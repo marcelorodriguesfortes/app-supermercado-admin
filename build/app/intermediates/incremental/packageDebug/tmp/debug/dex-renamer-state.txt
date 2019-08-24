@@ -1,10 +1,10 @@
-#Sun Aug 04 14:23:40 BRT 2019
+#Tue Aug 06 13:26:19 BRT 2019
 path.2=classes3.dex
 path.1=classes2.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/transforms/dexMerger/debug/0
-base.1=/home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/transforms/dexMerger/debug/0
-base.0=/home/marcelo/Repositorios/supermercado-adm/build/app/intermediates/transforms/dexMerger/debug/0
+base.2=C\:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+base.0=C\:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
