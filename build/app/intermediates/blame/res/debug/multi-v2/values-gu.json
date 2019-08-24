@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Backup\\repositorios\\app_supermercado_admin\\app-supermercado-admin\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
+            "outputFile": "/home/marcelo/Repositorios/supermercado-adm/app-supermercado-admin/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-gu/values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\ebe1443504ba43c97278f290da2be0f7\\res\\values-gu\\values-gu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,318,425,512,613,736,813,891,971,1077,1179,1276,1385,1484,1594,1754,1857",
-                        "endColumns": "108,103,106,86,100,122,76,77,79,105,101,96,108,98,109,159,102,79",
-                        "endOffsets": "209,313,420,507,608,731,808,886,966,1072,1174,1271,1380,1479,1589,1749,1852,1932"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,318,425,512,613,736,813,891,971,1077,1179,1276,1385,1484,1594,1754,4522",
-                        "endColumns": "108,103,106,86,100,122,76,77,79,105,101,96,108,98,109,159,102,79",
-                        "endOffsets": "209,313,420,507,608,731,808,886,966,1072,1174,1271,1380,1479,1589,1749,1852,4597"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\ba8525cff22f9baedf68f6f019c3ffce\\res\\values-gu\\values-gu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4602",
-                        "endColumns": "100",
-                        "endOffsets": "4698"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\e20f256ec9e371dd117ccd051894f427\\res\\values-gu\\values.xml",
+                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/6ff0b44c3f5388731c7654a7a18fe6ea/res/values-gu/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\marcelorf\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-16.0.1.aar\\f05e946ee534cc5f33160beac5dd1a36\\res\\values-gu\\values.xml",
+                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/bb075d68e61cc135635fff31d2a00817/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4602",
+                        "endColumns": "100",
+                        "endOffsets": "4698"
+                    }
+                },
+                {
+                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/abb1f3164445775c185d59e032a05291/res/values-gu/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -69,6 +52,23 @@
                         "startOffsets": "2997",
                         "endColumns": "205",
                         "endOffsets": "3198"
+                    }
+                },
+                {
+                    "source": "/home/marcelo/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1a7945b603c837e985a6777e1cf60617/res/values-gu/values-gu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,214,318,425,512,613,736,813,891,971,1077,1179,1276,1385,1484,1594,1754,1857",
+                        "endColumns": "108,103,106,86,100,122,76,77,79,105,101,96,108,98,109,159,102,79",
+                        "endOffsets": "209,313,420,507,608,731,808,886,966,1072,1174,1271,1380,1479,1589,1749,1852,1932"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,214,318,425,512,613,736,813,891,971,1077,1179,1276,1385,1484,1594,1754,4522",
+                        "endColumns": "108,103,106,86,100,122,76,77,79,105,101,96,108,98,109,159,102,79",
+                        "endOffsets": "209,313,420,507,608,731,808,886,966,1072,1174,1271,1380,1479,1589,1749,1852,4597"
                     }
                 }
             ]

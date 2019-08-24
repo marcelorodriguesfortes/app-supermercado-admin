@@ -334,7 +334,7 @@ class _AddProductsState extends State<AddProducts> {
       setState(() {
         isLoading = true;
       });
-      if (_image1 != null && _image2 != null && _image3 != null) {
+      if (_image1 != null) {
         if (selectedSizes.isNotEmpty) {
           String imageUrl1;
           String imageUrl2;
@@ -345,28 +345,28 @@ class _AddProductsState extends State<AddProducts> {
           final String picture1 = "${DateTime.now().millisecondsSinceEpoch.toString()}1.jpg";
           StorageUploadTask task1 = storage.ref().child(picture1).putFile(_image1);
 
-          final String picture2 = "${DateTime.now().millisecondsSinceEpoch.toString()}2.jpg";
+          /*final String picture2 = "${DateTime.now().millisecondsSinceEpoch.toString()}2.jpg";
           StorageUploadTask task2 = storage.ref().child(picture2).putFile(_image2);
 
           final String picture3 = "${DateTime.now().millisecondsSinceEpoch.toString()}3.jpg";
-          StorageUploadTask task3 = storage.ref().child(picture3).putFile(_image3);
+          StorageUploadTask task3 = storage.ref().child(picture3).putFile(_image3);*/
 
-          StorageTaskSnapshot snapshot1 = await task1.onComplete.then((snapshot) => snapshot);
-          StorageTaskSnapshot snapshot2 = await task2.onComplete.then((snapshot) => snapshot);
+          //StorageTaskSnapshot snapshot1 = await task1.onComplete.then((snapshot) => snapshot);
+          //StorageTaskSnapshot snapshot2 = await task2.onComplete.then((snapshot) => snapshot);
 
 
           //obtendo a URL das imagens para poder utilizar no app
-          task3.onComplete.then((snapshot3) async {
-            imageUrl1 = await snapshot1.ref.getDownloadURL();
-            imageUrl2 = await snapshot2.ref.getDownloadURL();
-            imageUrl3 = await snapshot3.ref.getDownloadURL();
+          task1.onComplete.then((snapshot) async {
+            imageUrl1 = await snapshot.ref.getDownloadURL();
+            //imageUrl2 = await snapshot2.ref.getDownloadURL();
+            //imageUrl3 = await snapshot3.ref.getDownloadURL();
 
-            List<String> listaImagens = [imageUrl1, imageUrl2, imageUrl3];
+            String imagem = imageUrl1;
 
             _productService.uploadProduct(
                 productName: productNameController.text,
                 price: double.parse(priceController.text),
-                images: listaImagens,
+                image: imagem,
                 quantity: int.parse(quantityController.text)
             );
 
