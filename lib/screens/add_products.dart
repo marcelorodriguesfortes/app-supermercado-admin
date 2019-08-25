@@ -7,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import '../db/product.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'admin.dart';
 
 class AddProducts extends StatefulWidget {
   @override
@@ -33,9 +33,7 @@ class _AddProductsState extends State<AddProducts> {
   List<DropdownMenuItem<String>> brandsDropDown = <DropdownMenuItem<String>>[];
   String _currentCategory;
   List<String> selectedSizes = <String>[];
-  File _image1;
-  File _image2;
-  File _image3;
+  File _image;
   bool isLoading = false;
 
   @override
@@ -61,17 +59,15 @@ class _AddProductsState extends State<AddProducts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.1,
-        backgroundColor: white,
-        leading: Icon(
-          Icons.close,
-          color: black,
+      appBar: new AppBar(
+        iconTheme: IconThemeData(color: Colors.grey),
+        backgroundColor: Colors.white,
+        title: InkWell(child: Text('Adicionar produtos',style: TextStyle(color: Colors.grey),),
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => new Admin()));
+          },
         ),
-        title: Text(
-          "add products",
-          style: TextStyle(color: black),
-        ),
+        elevation: 0.0,
       ),
       body: Form(
         key: _formKey,
@@ -81,59 +77,22 @@ class _AddProductsState extends State<AddProducts> {
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(98,8,98,8),
                     child: OutlineButton(
-                        borderSide: BorderSide(
-                            color: grey.withOpacity(0.8), width: 2.5),
+                        borderSide: BorderSide(color: grey.withOpacity(0.8), width: 2.5, ),
+
                         onPressed: () {
-                          _selectImage(
-                              ImagePicker.pickImage(
-                                  source: ImageSource.gallery),
-                              1);
+                          _selectImage(ImagePicker.pickImage(source: ImageSource.gallery));
                         },
-                        child: displayChild1()),
+
+                        child: displayChild()
+                    ),
                   ),
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: OutlineButton(
-                        borderSide: BorderSide(
-                            color: grey.withOpacity(0.8), width: 2.5),
-                        onPressed: () {
-                          _selectImage(
-                              ImagePicker.pickImage(
-                                  source: ImageSource.gallery),
-                              2);
-                        },
-                        child: displayChild2()),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: OutlineButton(
-                        borderSide: BorderSide(
-                            color: grey.withOpacity(0.8), width: 2.5),
-                        onPressed: () {
-                          _selectImage(
-                              ImagePicker.pickImage(
-                                  source: ImageSource.gallery),
-                              3);
-                        },
-                        child: displayChild3()),
-                  ),
-                )
+
               ],
             ),
 
-            /*Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Text(
-                'Digite o nome do produto: ',
-                style: TextStyle(color: blue),
-              ),
-            ),*/
 
             Padding(
               padding: const EdgeInsets.all(12.0),
@@ -145,23 +104,6 @@ class _AddProductsState extends State<AddProducts> {
                     return 'Digite um nome para o produto';
                   } else if (value.length > 10) {
                     return 'O nome do produto não pode ultrapassar 10 caracteres';
-                  }
-                  return null;
-                },
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: TextFormField(
-                controller: quantityController,
-                keyboardType: TextInputType.numberWithOptions(),
-                decoration: InputDecoration(
-                  hintText: "Quantidade",
-                ),
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Digite um nome para o produto';
                   }
                   return null;
                 },
@@ -189,10 +131,10 @@ class _AddProductsState extends State<AddProducts> {
             Row(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(13,32,12,22),
                   child: Text(
-                    'Category: ',
-                    style: TextStyle(color: blue),
+                    'Categoria: ',
+                    style: TextStyle(color: blue,fontSize: 16.0),
                   ),
                 ),
                 DropdownButton(
@@ -202,34 +144,31 @@ class _AddProductsState extends State<AddProducts> {
               ],
             ),
 
-            Row(
-              children: <Widget>[
-                Checkbox(
-                    value: selectedSizes.contains('28'),
-                    onChanged: (value) => changeSelectedSize('28')),
-                Text("28"),
-                Checkbox(
-                    value: selectedSizes.contains('32'),
-                    onChanged: (value) => changeSelectedSize('32')),
-                Text("32"),
-                Checkbox(
-                    value: selectedSizes.contains('36'),
-                    onChanged: (value) => changeSelectedSize('36')),
-                Text("36"),
-                Checkbox(
-                    value: selectedSizes.contains('40'),
-                    onChanged: (value) => changeSelectedSize('40')),
-                Text("40"),
-              ],
+
+
+            Padding(
+              padding:
+              const EdgeInsets.fromLTRB(44.0, 18.0, 44.0, 18.0),
+              child: Material(
+                  borderRadius: BorderRadius.circular(20.0),
+                  color: Colors.blue,
+                  elevation: 0.0,
+                  child: MaterialButton(
+                    onPressed: () async{
+                      validateAndUpload();
+                    },
+                    minWidth: MediaQuery.of(context).size.width,
+                    child: Text(
+                      "Adicionar produto",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15.0),
+                    ),
+                  )),
             ),
 
-            FlatButton(
-                color: blue,
-                textColor: white,
-                child: Text('Adicionar Produto'),
-                onPressed: () {
-                  validateAndUpload();
-                })
           ],
         ),
       ),
@@ -263,103 +202,47 @@ class _AddProductsState extends State<AddProducts> {
     }
   }
 
-  void _selectImage(Future<File> pickImage, int imageNumber) async {
+  void _selectImage(Future<File> pickImage) async {
     File tempImg = await pickImage;
+    setState(() {
+      _image = tempImg;
+    });
 
-    switch (imageNumber) {
-      case 1:
-        setState(() {
-          _image1 = tempImg;
-        });
-        break;
-
-      case 2:
-        setState(() {
-          _image2 = tempImg;
-        });
-        break;
-
-      case 3:
-        setState(() {
-          _image3 = tempImg;
-        });
-        break;
-    }
   }
 
-  Widget displayChild1() {
-    if (_image1 == null) {
+  Widget displayChild() {
+    if (_image == null) {
       return Padding(
-        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
+        padding: const EdgeInsets.all(20),
         child: new Icon(
-          Icons.add,
+          Icons.photo_camera,
           color: grey,
         ),
       );
     } else {
-      return Image.file(_image1);
+      return Image.file(_image,height: 140,);
     }
   }
 
-  Widget displayChild2() {
-    if (_image2 == null) {
-      return Padding(
-        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
-        child: new Icon(
-          Icons.add,
-          color: grey,
-        ),
-      );
-    } else {
-      return Image.file(_image2);
-    }
-  }
-
-  Widget displayChild3() {
-    if (_image3 == null) {
-      return Padding(
-        padding: const EdgeInsets.fromLTRB(14.0, 30.0, 14.0, 30.0),
-        child: new Icon(
-          Icons.add,
-          color: grey,
-        ),
-      );
-    } else {
-      return Image.file(_image3);
-    }
-  }
 
   void validateAndUpload() async {
     if (_formKey.currentState.validate()) {
       setState(() {
         isLoading = true;
       });
-      if (_image1 != null) {
+      if (_image != null) {
         if (selectedSizes.isNotEmpty) {
           String imageUrl1;
-          String imageUrl2;
-          String imageUrl3;
 
           final FirebaseStorage storage = FirebaseStorage.instance;
 
           final String picture1 = "${DateTime.now().millisecondsSinceEpoch.toString()}1.jpg";
-          StorageUploadTask task1 = storage.ref().child(picture1).putFile(_image1);
-
-          /*final String picture2 = "${DateTime.now().millisecondsSinceEpoch.toString()}2.jpg";
-          StorageUploadTask task2 = storage.ref().child(picture2).putFile(_image2);
-
-          final String picture3 = "${DateTime.now().millisecondsSinceEpoch.toString()}3.jpg";
-          StorageUploadTask task3 = storage.ref().child(picture3).putFile(_image3);*/
-
-          //StorageTaskSnapshot snapshot1 = await task1.onComplete.then((snapshot) => snapshot);
-          //StorageTaskSnapshot snapshot2 = await task2.onComplete.then((snapshot) => snapshot);
+          StorageUploadTask task1 = storage.ref().child(picture1).putFile(_image);
 
 
           //obtendo a URL das imagens para poder utilizar no app
           task1.onComplete.then((snapshot) async {
             imageUrl1 = await snapshot.ref.getDownloadURL();
-            //imageUrl2 = await snapshot2.ref.getDownloadURL();
-            //imageUrl3 = await snapshot3.ref.getDownloadURL();
 
             String imagem = imageUrl1;
 

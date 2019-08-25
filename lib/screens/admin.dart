@@ -13,7 +13,7 @@ class Admin extends StatefulWidget {
 
 class _AdminState extends State<Admin> {
   Page _selectedPage = Page.dashboard;
-  MaterialColor active = Colors.red;
+  MaterialColor active = Colors.blue;
   MaterialColor notActive = Colors.grey;
   TextEditingController categoryController = TextEditingController();
   TextEditingController brandController = TextEditingController();
@@ -41,7 +41,7 @@ class _AdminState extends State<Admin> {
                             ? active
                             : notActive,
                       ),
-                      label: Text('Dashboard'))),
+                      label: Text('Informações'))),
               Expanded(
                   child: FlatButton.icon(
                       onPressed: () {
@@ -52,7 +52,7 @@ class _AdminState extends State<Admin> {
                         color:
                             _selectedPage == Page.manage ? active : notActive,
                       ),
-                      label: Text('Manage'))),
+                      label: Text('Gerenciar'))),
             ],
           ),
           elevation: 0.0,
@@ -66,24 +66,7 @@ class _AdminState extends State<Admin> {
       case Page.dashboard:
         return Column(
           children: <Widget>[
-            ListTile(
-              subtitle: FlatButton.icon(
-                onPressed: null,
-                icon: Icon(
-                  Icons.attach_money,
-                  size: 30.0,
-                  color: Colors.green,
-                ),
-                label: Text('12,000',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 30.0, color: Colors.green)),
-              ),
-              title: Text(
-                'Revenue',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 24.0, color: Colors.grey),
-              ),
-            ),
+
             Expanded(
               child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -93,10 +76,10 @@ class _AdminState extends State<Admin> {
                     padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.people_outline),
-                              label: Text("Users")),
+                          title: Padding(
+                            padding: const EdgeInsets.fromLTRB(8,18,8,8),
+                            child: Text("Usuários",textAlign: TextAlign.center, style: TextStyle(color: Colors.grey),),
+                          ),
                           subtitle: Column(
                             children: <Widget>[
                               Text(
@@ -108,81 +91,48 @@ class _AdminState extends State<Admin> {
                           )),
                     ),
                   ),
+
                   Padding(
                     padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.category),
-                              label: Text("Catego")),
-                          subtitle: Text(
-                            '23',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
+                          title: Padding(
+                            padding: const EdgeInsets.fromLTRB(8,18,8,8),
+                            child: Text("Categorias",textAlign: TextAlign.center, style: TextStyle(color: Colors.grey),),
+                          ),
+                          subtitle: Column(
+                            children: <Widget>[
+                              Text(
+                                '3',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: active, fontSize: 60.0),
+                              ),
+                            ],
                           )),
                     ),
                   ),
+
+
                   Padding(
                     padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
                     child: Card(
                       child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.track_changes),
-                              label: Text("Producs")),
-                          subtitle: Text(
-                            '120',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
+                          title: Padding(
+                            padding: const EdgeInsets.fromLTRB(8,18,8,8),
+                            child: Text("Produtos",textAlign: TextAlign.center, style: TextStyle(color: Colors.grey),),
+                          ),
+                          subtitle: Column(
+                            children: <Widget>[
+                              Text(
+                                '120',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: active, fontSize: 60.0),
+                              ),
+                            ],
                           )),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
-                    child: Card(
-                      child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.tag_faces),
-                              label: Text("Sold")),
-                          subtitle: Text(
-                            '13',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
-                          )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
-                    child: Card(
-                      child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.shopping_cart),
-                              label: Text("Orders")),
-                          subtitle: Text(
-                            '5',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
-                          )),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 5.0),
-                    child: Card(
-                      child: ListTile(
-                          title: FlatButton.icon(
-                              onPressed: null,
-                              icon: Icon(Icons.close),
-                              label: Text("Return")),
-                          subtitle: Text(
-                            '0',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: active, fontSize: 60.0),
-                          )),
-                    ),
-                  ),
+
                 ],
               ),
             ),
@@ -217,20 +167,6 @@ class _AdminState extends State<Admin> {
             ListTile(
               leading: Icon(Icons.category),
               title: Text("Lista de categoria"),
-              onTap: () {},
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.add_circle_outline),
-              title: Text("Adicionar marca"),
-              onTap: () {
-                _brandAlert();
-              },
-            ),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.library_books),
-              title: Text("Lista de marcas"),
               onTap: () {},
             ),
             Divider(),
