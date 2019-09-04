@@ -164,7 +164,8 @@ class _AddProductsState extends State<AddProducts> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 15.0),
+                          fontSize: 15.0
+                      ),
                     ),
                   )),
             ),
@@ -231,26 +232,25 @@ class _AddProductsState extends State<AddProducts> {
         isLoading = true;
       });
       if (_image != null) {
-        if (selectedSizes.isNotEmpty) {
-          String imageUrl1;
+          String URLimagem;
 
           final FirebaseStorage storage = FirebaseStorage.instance;
 
-          final String picture1 = "${DateTime.now().millisecondsSinceEpoch.toString()}1.jpg";
-          StorageUploadTask task1 = storage.ref().child(picture1).putFile(_image);
+          final String picture = "${DateTime.now().millisecondsSinceEpoch.toString()}.jpg";
+          StorageUploadTask task = storage.ref().child(picture).putFile(_image);
 
 
           //obtendo a URL das imagens para poder utilizar no app
-          task1.onComplete.then((snapshot) async {
-            imageUrl1 = await snapshot.ref.getDownloadURL();
+          task.onComplete.then((snapshot) async {
+            URLimagem = await snapshot.ref.getDownloadURL();
 
-            String imagem = imageUrl1;
+            String imagem = URLimagem;
 
             _productService.uploadProduct(
                 productName: productNameController.text,
                 price: double.parse(priceController.text),
                 image: imagem,
-                quantity: int.parse(quantityController.text)
+                category: _currentCategory.toString()
             );
 
             _formKey.currentState.reset();
@@ -270,12 +270,6 @@ class _AddProductsState extends State<AddProducts> {
           Fluttertoast.showToast(msg: "Produtos adicionados");
           Navigator.pop(context);
 
-        } else {
-          setState(() {
-            isLoading = false;
-          });
-          Fluttertoast.showToast(msg: "Selecione ao menos um tamanho");
-        }
       } else {
         setState(() {
           isLoading = false;
